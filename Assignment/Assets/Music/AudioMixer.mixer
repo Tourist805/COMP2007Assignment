@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-4590703623428226330
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: e85041c88fab83040a9a541dbd8e13ad
+  m_EffectName: Attenuation
+  m_MixLevel: 8df3c9b43464a02469a158f3747f3867
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-2391066113560199014
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Chicken
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b4eeff19301a1374ab7d8e1577a5be11
+  m_Children: []
+  m_Volume: 7d683879678ed534b842e3dcc03689e4
+  m_Pitch: fee2700029e4bad4ba506b7df6494669
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 3207201894293532353}
+  m_UserColorIndex: 3
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &-1361210900817333533
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: d489d423fc186eb4eb0eb53aafc09686
+  m_Children: []
+  m_Volume: 2b0b16dec6766de41ba09772bdf040f3
+  m_Pitch: 01034e0f85733424fa318c9e91019d55
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 7162994788217796101}
+  m_UserColorIndex: 7
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AudioMixer
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters:
+  - guid: 7d683879678ed534b842e3dcc03689e4
+    name: ChickenVolume
+  - guid: 7cdf12e5c05eac148840078096705045
+    name: EggVolume
+  - guid: b04626e77128b9e4792612d6b76b0592
+    name: UIVolume
+  - guid: 01034e0f85733424fa318c9e91019d55
+    name: PlayerVolume
+  m_AudioMixerGroupViews:
+  - guids:
+    - cb721bb78b2c4fb4b85cda5497b9fece
+    - d489d423fc186eb4eb0eb53aafc09686
+    - b4eeff19301a1374ab7d8e1577a5be11
+    - c04212b0bb0e42745855c38106eab43d
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: cb721bb78b2c4fb4b85cda5497b9fece
+  m_Children:
+  - {fileID: -2391066113560199014}
+  - {fileID: -1361210900817333533}
+  - {fileID: 2205052481714725790}
+  m_Volume: b04626e77128b9e4792612d6b76b0592
+  m_Pitch: d75f6057a4e4a9546aaa4d0160c3c111
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 481d862265c739446b35da1ef94b18df
+  m_EffectName: Attenuation
+  m_MixLevel: cae95c5104442bb43887aeda4c24ea3b
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 261243b58f1cb7b4e95039d389e4557f
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
+--- !u!243 &2205052481714725790
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Egg
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c04212b0bb0e42745855c38106eab43d
+  m_Children: []
+  m_Volume: 7cdf12e5c05eac148840078096705045
+  m_Pitch: d5c7dc213e590bc48ae5d7414a18c955
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -4590703623428226330}
+  m_UserColorIndex: 1
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &3207201894293532353
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: e9297c3028a0c7b42b620a30765cbf71
+  m_EffectName: Attenuation
+  m_MixLevel: bf314905c4916aa4589bd3767eb19458
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &7162994788217796101
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 6218c7af2955c8840a1ea69ac709a6c6
+  m_EffectName: Attenuation
+  m_MixLevel: 45984499bc6f6c74c8d2301c656d8037
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0

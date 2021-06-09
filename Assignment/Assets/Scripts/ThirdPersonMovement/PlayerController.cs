@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce;
 
+    public AudioSource eggSource;
+
     public Rigidbody rig;
     private void Update()
     {
@@ -53,5 +55,14 @@ public class PlayerController : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("Entered collider");
+        if (col.CompareTag("Player") && !eggSource.isPlaying)
+        {
+            eggSource.Play();
+        }
     }
 }
