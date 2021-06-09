@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Egg
+  - Fire
+  - Fireworks
   layers:
   - Default
   - TransparentFX
