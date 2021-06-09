@@ -28,6 +28,14 @@ public class Egg : MonoBehaviour
         if(Egg.EggCount <= 0)
         {
             Debug.Log("You win");
+            GameObject[] FireworkSystems = GameObject.FindGameObjectsWithTag("Fireworks");
+
+            if (FireworkSystems.Length <= 0) { return; }
+
+            foreach (GameObject GO in FireworkSystems)
+            {
+                GO.GetComponent<ParticleSystem>().Play();
+            }
         }
     }
 }
