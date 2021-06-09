@@ -25,7 +25,6 @@ public class AttackState : MonoBehaviour, IFSMState
         Target = GameObject.FindGameObjectWithTag(TargetTag).transform;
     }
 
-
     public void OnEnter()
     {
         StartCoroutine(DoAttack());
@@ -47,18 +46,24 @@ public class AttackState : MonoBehaviour, IFSMState
             ThisAgent.isStopped = false;
             ThisAgent.SetDestination(Target.position);
         }
+
     }
 
     public FSMStateType ShouldTransitionToState()
     {
-        throw new System.NotImplementedException();
+        if (Vector3.Distance(Target.position, transform.position) > EscapeDistance)
+        {
+            return FSMStateType.Chase;
+        }
+
+        return FSMStateType.Attack;
     }
 
     private IEnumerator DoAttack()
     {
-        while(true)
+        while (true)
         {
-            if(IsAttacking)
+            if (IsAttacking)
             {
                 Debug.Log("Attack Player");
 

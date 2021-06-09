@@ -8,13 +8,13 @@ public class ChaseState : MonoBehaviour, IFSMState
 {
     public FSMStateType StateName { get { return FSMStateType.Chase; } }
 
-    public float MovementSpeed = 8.0f;
+    public float MovementSpeed = 2.5f;
     public float Acceleration = 3.0f;
     public float AngularSpeed = 720.0f;
-    public float FOV = 90.0f;
+    public float FOV = 60.0f;
     public string AnimationRunParamName = "Run";
 
-    private readonly float MinChaseDistance = 2.0f;
+    private readonly float MinChaseDistance = 10.0f;
     private NavMeshAgent ThisAgent;
     private SightLine SightLine;
     private float InitialFOV = 0.0f;
@@ -26,6 +26,7 @@ public class ChaseState : MonoBehaviour, IFSMState
         SightLine = GetComponent<SightLine>();
         ThisAnimator = GetComponent<Animator>();
     }
+
     public void OnEnter()
     {
         InitialFOV = SightLine.FieldOfView;
